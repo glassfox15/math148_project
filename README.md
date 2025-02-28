@@ -1,21 +1,26 @@
-# Math 148: Training a Computer to Play 2048 in 3D
+# Training a Computer to Play 2048 in 3D
 
-### Some Useful Links
+By Tianlin Yue, Yizhuo Chang, Stephanie Su, Zizhan Wei, Jacob Titcomb, Yinqi Yao, and Zhekai Zheng
 
-Feel free to add more links if you find more useful information.
+This respository is a part of a capstone project for MATH 148 at UCLA entitled "Developing an AI Agent for 3D 2048 Using Deep Q-Learning."
 
-* Reinforcement learning resources
-    - https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf
-    - https://arxiv.org/pdf/2212.11087
+Feel free to try for yourself!
 
-* Machine agent playing 2048
-    - https://github.com/qwert12500/2048_rl/blob/main/2048_Reinforcement_Learning.ipynb
-    - https://medium.com/@qwert12500/playing-2048-with-deep-q-learning-with-pytorch-implementation-4313291efe61
-    - https://arxiv.org/pdf/2212.11087 (same link as earlier)
+## *Overview*
 
-* Some math behind 2048
-    - as Markov Decision Process
-        - https://jdlm.info/articles/2018/03/18/markov-decision-process-2048.html
+Our project studies a 3-dimensional variation on the game 2048, originally designed by [Gabriele Cirulli](https://github.com/gabrielecirulli/2048). We construct the game environment and train an AI agent to play the game for a $3\times 3\times 3$ board. Employing a dueling deep q-learning model, the code in this repository documents our development process: neural network design to model training and eventually model testing.
 
-* PyTorch references
-    - https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html
+
+## *Repository Summary*
+
+1. `game_implementation.py`implements the 3-dimensional game, playable by user or computer.
+
+2. Running `playable_game.py` allows the user to play 2048, with specifiable parameters such as the dimensions of the game environment and the desired finishing tile value.
+
+3. `random_baseline.py` creates a baseline agent to compare model performance. This implementation plays 10,000 games using purely random inputs and produces summarizing graphs upon completion.
+
+4. Getting to the heart of the project, `model_construction.py` constructs the dueling deep q-learning model. The neural network is built primarily using `PyTorch`.
+
+5. `model_train.py` runs training episodes for the model.
+
+6. Finally, `model_test.py` lets the AI agent play the game for itself! You can then visualize the gameplay using `gymnasium`.
