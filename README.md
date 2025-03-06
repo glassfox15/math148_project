@@ -21,6 +21,6 @@ Our project studies a 3-dimensional variation on the game 2048, originally desig
 
 4. Getting to the heart of the project, `model_construction.py` constructs the dueling deep q-learning model. The neural network is built primarily using `PyTorch`.
 
-5. `model_train.py` runs training episodes for the model.
+5. `model_train.py` runs training episodes for the model. But to visualize *possible* training iterations, `training_simulation_analysis.py` runs simulations and produces plots at the end for analysis.
 
-6. Finally, `model_test.py` lets the AI agent play the game for itself! You can then visualize the gameplay using `gymnasium`.
+6. Finally, `model_test.py` lets the AI agent play the game for itself! You can then visualize the gameplay using our implementation with `gymnasium`.
