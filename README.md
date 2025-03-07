@@ -21,13 +21,11 @@ Unfortunately, the checkpoint files are too large to upload to GitHub, but they 
 
 2. Running `playable_game.py` allows the user to play 2048, with specifiable parameters such as the dimensions of the game environment and the desired finishing tile value.
 
-3. `random_baseline.py` creates a baseline agent to compare model performance. This implementation plays 10,000 games using purely random inputs and produces summarizing graphs upon completion.
+3. Getting to the heart of the project, `model_construction.py` constructs the dueling deep q-learning model. The neural network is built primarily using `PyTorch`.
 
-4. Getting to the heart of the project, `model_construction.py` constructs the dueling deep q-learning model. The neural network is built primarily using `PyTorch`.
+4. `model_train.py` runs training episodes for the model.
 
-5. `model_train.py` runs training episodes for the model.
-
-6. Finally, `model_test.py` lets the AI agent play the game for itself! You can then visualize the gameplay using our implementation with `pygame` and `OpenGL` in file `visualize_game.py`.
+5. Finally, `model_test.py` lets the AI agent play the game for itself! You can then visualize the gameplay using our implementation with `pygame` and `OpenGL` in file `visualize_game.py`.
 
 
 As part of our analysis, we ran simulations of both the training and testing phases. To visualize simulated training iterations, `training_simulation_analysis.py` runs simulation batches and produces plots and statistics at the end. Similarly, `testing_simulation_analysis.py` produces plots and statistics for simulations of the testing phase, letting the models play simulated games. Just make sure you have the proper checkpoints loaded!
