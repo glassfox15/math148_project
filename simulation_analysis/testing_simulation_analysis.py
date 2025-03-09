@@ -11,8 +11,8 @@ import time
 This code simulates testing runs of the model at different episodes.
 The purpose is to understand possible agent game play outcomes.
 
-Requires the following PRE-TRAINED model checkpoints:
-    checkpoint_episode_0.pth <
+To recreate our analysis requires the following PRE-TRAINED model checkpoints:
+  > checkpoint_episode_0.pth <
     checkpoint_episode_50.pth
     checkpoint_episode_100.pth
     checkpoint_episode_150.pth
@@ -72,7 +72,7 @@ for i, ep in enumerate(eps):
         env = Board_3D(rows=3, cols=3, pipes=3)
 
         # Do 1000 iterations using this model
-        ai_results = ai_play(env, trained_agent, num_episodes=1000, render=False, sim=True)
+        ai_results = ai_play(env, trained_agent, num_episodes=n_sims, render=False, sim=True)
         print('Episode ' + str(i) + ' done')
 
     test_score_sims.append([a['accum_score'] for a in ai_results])
