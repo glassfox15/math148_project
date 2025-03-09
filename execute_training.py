@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Inputs
-checkpoint_path = None          # load saved agent: 'checkpoint_episode_###.pth'
+checkpoint_path = ''            # load saved agent: 'checkpoint_episode_###.pth'
 episodes = 500                  # number of desired episodes
 save_plots = False              # whether to save plots of results
 
