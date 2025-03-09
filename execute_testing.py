@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import torch
 
 # Inputs
-checkpoint_path = None          # load saved agent: 'checkpoint_episode_###.pth'
-games = 3                       # desired number of games to play
+checkpoint_path = ''              # load saved agent: 'checkpoint_episode_###.pth'
+games = 3                         # desired number of games to play
 
 # Define device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
