@@ -79,6 +79,8 @@ for i, ep in enumerate(eps):
     test_board_sims.append([a['max_tile'] for a in ai_results])
     test_action_sims.append([a['moves_tracking'] for a in ai_results])
 
+    print('\n\n')
+
 
 ### ===== DATA SAVING & STATISTICS =====
 
@@ -158,10 +160,11 @@ plt.show()
 
 # 4) ------
 
-### OPERATION DISTRIBUTIONS: Episode 190
-ep190_actions = test_action_sims[[i for i in range(len(eps)) if eps[i] == 190][0]]
+### OPERATION DISTRIBUTIONS: Agent from final episode
 
-move_dist_arr = np.array([[r.count(move) for r in ep190_actions] for move in set(ep190_actions[0])])
+ep_actions = test_action_sims[-1]
+
+move_dist_arr = np.array([[r.count(move) for r in ep_actions] for move in set(ep_actions[0])])
 move_props = move_dist_arr / move_dist_arr.sum(axis=0)
 
 pd.DataFrame(np.flip(np.sort(move_props, axis=0),axis=0).T).plot(
@@ -170,7 +173,7 @@ pd.DataFrame(np.flip(np.sort(move_props, axis=0),axis=0).T).plot(
     xlabel='Game',
     ylabel='Move Relative Proportion',
     width=1.0,
-    title='Game Move Distributions (Ep 190)',
+    title='Game Move Distributions (Ep ' + str(eps[-1]) + ')',
     figsize=(7, 5)
 )
 plt.gca().set_xticklabels([])
@@ -178,33 +181,61 @@ plt.gca().set_xticks([])
 plt.ylim((0,1))
 plt.legend(['most freq', '', '', '', '', 'least Freq'], loc='lower right')
 plt.tight_layout()
-if save_plots: plt.savefig('testing_action_dist_ep190.png')
+if save_plots: plt.savefig('testing_action_dist_ep' + str(eps[-1]) + '.png')
 plt.show()
 
 
 # 5) ------
 
+### OPERATION DISTRIBUTIONS: Episode 190
+
+if 190 in eps:
+    ep190_actions = test_action_sims[[i for i in range(len(eps)) if eps[i] == 190][0]]
+
+    move_dist_arr = np.array([[r.count(move) for r in ep190_actions] for move in set(ep190_actions[0])])
+    move_props = move_dist_arr / move_dist_arr.sum(axis=0)
+
+    pd.DataFrame(np.flip(np.sort(move_props, axis=0),axis=0).T).plot(
+        kind='bar',
+        stacked=True,
+        xlabel='Game',
+        ylabel='Move Relative Proportion',
+        width=1.0,
+        title='Game Move Distributions (Ep 190)',
+        figsize=(7, 5)
+    )
+    plt.gca().set_xticklabels([])
+    plt.gca().set_xticks([])
+    plt.ylim((0,1))
+    plt.legend(['most freq', '', '', '', '', 'least Freq'], loc='lower right')
+    plt.tight_layout()
+    if save_plots: plt.savefig('testing_action_dist_ep190.png')
+    plt.show()
+
+
+# 6) ------
+
 ### OPERATION DISTRIBUTIONS: Episode 340
-ep340_actions = test_action_sims[[i for i in range(len(eps)) if eps[i] == 340][0]]
 
-move_dist_arr = np.array([[r.count(move) for r in ep340_actions] for move in set(ep340_actions[0])])
-move_props = move_dist_arr / move_dist_arr.sum(axis=0)
+if 340 in eps:
+    ep340_actions = test_action_sims[[i for i in range(len(eps)) if eps[i] == 340][0]]
 
-pd.DataFrame(np.flip(np.sort(move_props, axis=0),axis=0).T).plot(
-    kind='bar',
-    stacked=True,
-    xlabel='Game',
-    ylabel='Move Relative Proportion',
-    width=1.0,
-    title='Game Move Distributions (Ep 340)',
-    figsize=(7, 5)
-)
-plt.gca().set_xticklabels([])
-plt.gca().set_xticks([])
-plt.ylim((0,1))
-plt.legend(['most freq', '', '', '', '', 'least Freq'], loc='lower right')
-plt.tight_layout()
-if save_plots: plt.savefig('testing_action_dist_ep340.png')
-plt.show()
+    move_dist_arr = np.array([[r.count(move) for r in ep340_actions] for move in set(ep340_actions[0])])
+    move_props = move_dist_arr / move_dist_arr.sum(axis=0)
 
-
+    pd.DataFrame(np.flip(np.sort(move_props, axis=0),axis=0).T).plot(
+        kind='bar',
+        stacked=True,
+        xlabel='Game',
+        ylabel='Move Relative Proportion',
+        width=1.0,
+        title='Game Move Distributions (Ep 340)',
+        figsize=(7, 5)
+    )
+    plt.gca().set_xticklabels([])
+    plt.gca().set_xticks([])
+    plt.ylim((0,1))
+    plt.legend(['most freq', '', '', '', '', 'least Freq'], loc='lower right')
+    plt.tight_layout()
+    if save_plots: plt.savefig('testing_action_dist_ep340.png')
+    plt.show()
