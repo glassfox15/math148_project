@@ -32,7 +32,7 @@ save_plots = False      # whether you want to store the plots
 
 # Prepare Simulations
 n_sims = 1000
-eps = [50, 100, 150, 190, 200, 250, 300, 350, 400] # episodes to load
+eps = [50, 100, 150, 190, 200, 250, 300, 340, 400] # episodes to load
 ep_labs = ['ep 0', *['ep ' + str(e) for e in eps]] # episode labels
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
