@@ -27,5 +27,4 @@ Unfortunately, the checkpoint files are too large to upload to GitHub, but they 
 
 5. Finally, `execute_testing.py` lets the AI agent play the game for itself! You can also visualize the gameplay using our implementation with `pygame` and `OpenGL` in the file `visualize_game.py`.
 
-
-We ran simulations of the training and testing portions as part of our analysis. Check out the folder `simulation_analysis` for more information.
+6. We ran simulations of the training and testing portions as part of our analysis. Check out the folder `simulation_analysis` for more information.
