@@ -25,7 +25,7 @@ Unfortunately, the checkpoint files are too large to upload to GitHub, but they 
 
 4. `training.py` and `testing.py` have the functions to perform training and testing. You can train the model using `execute_training.py`.
 
-5. Finally, `execute_testing.py` lets the AI agent play the game for itself! You can also visualize the gameplay using our implementation with `pygame` and `OpenGL` in file `visualize_game.py`.
+5. Finally, `execute_testing.py` lets the AI agent play the game for itself! You can also visualize the gameplay using our implementation with `pygame` and `OpenGL` in the file `visualize_game.py`.
 
 
-We ran simulations of the training and testing portions as part of our analysis. Check out the file `simulation_analysis` for more information.
+We ran simulations of the training and testing portions as part of our analysis. Check out the folder `simulation_analysis` for more information.
