@@ -1,13 +1,12 @@
 from game_implementation import Board_3D
 from model_construction import DQNAgent
 from testing import ai_play
-import matplotlib.pyplot as plt
-#import numpy as np
 import torch
 
 # Inputs
-checkpoint_path = ''              # load saved agent: 'checkpoint_episode_###.pth'
-games = 3                         # desired number of games to play
+checkpoint_path = ''            # load saved agent: 'checkpoint_episode_###.pth'
+games = 3                       # desired number of games to play
+render = True                   # whether boards at each stage should be shown, or just final game result
 
 # Define device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -34,4 +33,4 @@ if __name__ == "__main__":
     env = Board_3D(rows=3, cols=3, pipes=3)
 
     # Run the AI for 100 episodes with visualization
-    ai_results = ai_play(env, trained_agent, num_episodes=100, render=True, sim=False)
+    ai_results = ai_play(env, trained_agent, num_episodes=games, render=render, sim=False)
