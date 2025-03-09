@@ -4,7 +4,7 @@ This folder contains the code for the simulation analysis of our models.
 
 * Our analysis ran 1000 iterations of select episodes of our trained model.
 * Since training involves randomness and is very seed-dependent, this part aimed to look at possible outcomes of the training and testing phases.
-* Note that simulations of the training phase are *not* updating parameters
+* Note that simulations of the training phase are *not* updating parameters.
 * You can run training simulations with `training_simulation_analysis.py` and testing simulations with `testing_simulation_analysis.py`.
 
 
