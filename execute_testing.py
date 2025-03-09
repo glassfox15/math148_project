@@ -16,7 +16,6 @@ if __name__ == "__main__":
     # Define parameters
     input_shape = (3, 3, 3)  # rows, cols, pipes
     action_size = 6  # Number of possible actions (Q, W, E, A, S, D)
-    checkpoint_path = 'checkpoint_episode_190.pth'  # Adjust this to your last checkpoint
 
     # Initialize the agent
     trained_agent = DQNAgent(input_shape, action_size)
