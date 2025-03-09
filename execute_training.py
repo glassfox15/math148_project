@@ -6,8 +6,11 @@ import numpy as np
 
 # Inputs
 checkpoint_path = ''            # load saved agent: 'checkpoint_episode_###.pth'
-episodes = 500                  # number of desired episodes
+episodes = 10                   # number of desired episodes, actual training used around 500 episodes
 save_plots = False              # whether to save plots of results
+
+# NOTE: Checkpoints save every 10 episodes, so files for episode 0 and episode 10 should exist once those episodes complete.
+#       You might need to look around your local computer files in order to find them, but they are there.
 
 if __name__ == "__main__":
     env = Board_3D(rows=3, cols=3, pipes=3)
